@@ -1,0 +1,8 @@
+
+build_script:
+- dir "C:\Program Files\PostgreSQL" || date /t
+- dir "C:\Program Files (x86)\PostgreSQL" || date /t
+- dir "C:\Program Files(x86)\PostgreSQL" || date /t
+- dir "C:\ProgramFiles\PostgreSQL" || date /t
+- dir "C:\ProgramFiles (x86)\PostgreSQL" || date /t
+- dir "C:\ProgramFiles(x86)\PostgreSQL" || date /t

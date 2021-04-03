@@ -10,21 +10,28 @@ build_script:
 # - dir "C:\ProgramFiles (x86)\PostgreSQL" || date /t
 # - dir "C:\ProgramFiles(x86)\PostgreSQL" || date /t
 
+# - if "1"=="1" (
+#     set alpha=true &
+#     set beta=false &
+#     set beta2=false &
+#     if "%beta%"=="false" (
+#         set gamma=false &
+#         set delta=true 
+#       )
+#   ) else (
+#     set alpha=false &
+#     set beta=true
+#   )
+# - echo %alpha%
+# - echo %beta%
+# - echo %beta2%
+# - echo %gamma%
+# - echo %delta%
 
-- if "1"=="1" (
-    set alpha=true &
-    set beta=false &
-    set beta2=false &
-    if "%beta%"=="false" (
-        set gamma=false &
-        set delta=true 
-      )
-  ) else (
-    set alpha=false &
-    set beta=true
-  )
-- echo %alpha%
-- echo %beta%
-- echo %beta2%
-- echo %gamma%
-- echo %delta%
+if "1"=="1" (
+  set alpha=true
+  set beta=false
+) 
+echo %alpha%
+echo %beta%
+

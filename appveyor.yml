@@ -2,10 +2,21 @@
 image: Visual Studio 2019
 
 build_script:
-- set
-- dir "C:\Program Files\PostgreSQL" || date /t
-- dir "C:\Program Files (x86)\PostgreSQL" || date /t
-- dir "C:\Program Files(x86)\PostgreSQL" || date /t
-- dir "C:\ProgramFiles\PostgreSQL" || date /t
-- dir "C:\ProgramFiles (x86)\PostgreSQL" || date /t
-- dir "C:\ProgramFiles(x86)\PostgreSQL" || date /t
+# - set
+# - dir "C:\Program Files\PostgreSQL" || date /t
+# - dir "C:\Program Files (x86)\PostgreSQL" || date /t
+# - dir "C:\Program Files(x86)\PostgreSQL" || date /t
+# - dir "C:\ProgramFiles\PostgreSQL" || date /t
+# - dir "C:\ProgramFiles (x86)\PostgreSQL" || date /t
+# - dir "C:\ProgramFiles(x86)\PostgreSQL" || date /t
+
+
+- if "1"=="1" (
+    set alpha=true
+    set beta=false
+  ) else (
+    set alpha=false
+    set beta=true
+  )
+- echo %alpha%
+- echo %beta%

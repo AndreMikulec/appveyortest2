@@ -12,7 +12,7 @@ build_script:
 
 
 - if "1"=="1" (
-    set alpha=true
+    set alpha=true &
     set beta=false &
     set beta2=false &
     if "%beta%"=="false" (

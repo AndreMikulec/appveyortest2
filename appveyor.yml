@@ -38,6 +38,13 @@ build_script:
   - # tree
   - dir "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC"
   - bash -login -c "find '/c/Program Files (x86)/Microsoft Visual Studio 14.0' -name 'cl.exe' -type f"
+  - bash -login -c "find '/c/Program Files (x86)/Microsoft Visual Studio 14.0' -name 'VsDevCmd.bat' -type f"
+  - '"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\cl.exe" /?'
+  - '"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\amd\cl.exe" /?'
+  - '"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\amd64_x86\cl.exe" /?'
+  - '"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\cl.exe" /?'
+
+
 
 # DIES NOT FOUND - which cl
 # - set

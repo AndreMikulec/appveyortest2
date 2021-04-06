@@ -22,7 +22,10 @@ install:
 
 build_script:
   - cl /?
-  - which cl
+  - doskey /MACROS:ALL
+  - set
+  - bash -login -c "which cl"
+# DIES NOT FOUND - which cl
 # - set
 # - dir "C:\Program Files\PostgreSQL" || date /t
 # - dir "C:\Program Files (x86)\PostgreSQL" || date /t

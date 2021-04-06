@@ -37,6 +37,7 @@ build_script:
   - # cd "C:\Program Files (x86)"
   - # tree
   - dir "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC"
+  - bash -login -c "find '/c/Program Files (x86)/Microsoft Visual Studio 14.0' -name 'cl.exe' -type f"
 
 # DIES NOT FOUND - which cl
 # - set

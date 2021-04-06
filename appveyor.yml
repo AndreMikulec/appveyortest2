@@ -34,8 +34,9 @@ build_script:
   - dir "C:\Program Files (x86)"
   - dir "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin"
   - '"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\cl" /?'
-  - cd "C:\Program Files (x86)"
-  - tree
+  - # cd "C:\Program Files (x86)"
+  - # tree
+  - dir "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC"
 
 # DIES NOT FOUND - which cl
 # - set

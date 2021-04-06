@@ -29,6 +29,8 @@ build_script:
   - cl /?
   - cd %VSSDK140Install%
   - tree
+  - bash -login -c "find /c -name '*cl.exe'       -print 2>/dev/null"
+  - bash -login -c "find /c -name '*vcvars64.bat' -print 2>/dev/null"
 
 # DIES NOT FOUND - which cl
 # - set

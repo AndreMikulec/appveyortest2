@@ -9,19 +9,20 @@ environment:
       APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
 
 install:
-  #
-  - if %PLATFORM%==x64 (set BIT=64) else set BIT=32
-  - set betterperlurl=https://strawberryperl.com/download/5.32.1.1/strawberry-perl-5.32.1.1-%BIT%bit-portable.zip
-  - set betterperl=strawberry%BIT%
-  - if not exist %betterperl%.zip curl -o %betterperl%.zip %betterperlurl%
-  - 7z x %betterperl%.zip -oc:\%betterperl%
-  - set Path=c:\%betterperl%\perl\bin;%Path%
-  - which perl
-  - set Path=%Path%;c:\%betterperl%\c\bin
-  #
+#   #
+#   - if %PLATFORM%==x64 (set BIT=64) else set BIT=32
+#   - set betterperlurl=https://strawberryperl.com/download/5.32.1.1/strawberry-perl-5.32.1.1-%BIT%bit-portable.zip
+#   - set betterperl=strawberry%BIT%
+#   - if not exist %betterperl%.zip curl -o %betterperl%.zip %betterperlurl%
+#   - 7z x %betterperl%.zip -oc:\%betterperl%
+#   - set Path=c:\%betterperl%\perl\bin;%Path%
+#   - which perl
+#   - set Path=%Path%;c:\%betterperl%\c\bin
+#   #
 
 build_script:
   - cl /?
+  - which cl
 # - set
 # - dir "C:\Program Files\PostgreSQL" || date /t
 # - dir "C:\Program Files (x86)\PostgreSQL" || date /t

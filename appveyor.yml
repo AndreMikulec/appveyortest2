@@ -27,6 +27,8 @@ build_script:
   - set Path=%VCToolsInstallDir%\bin\Host%PLATFORM%\%PLATFORM%;%Path%
   - set
   - cl /?
+  - cd %VSSDK140Install%
+  - tree
 
 # DIES NOT FOUND - which cl
 # - set

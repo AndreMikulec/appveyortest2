@@ -21,14 +21,14 @@ install:
 #   #
 
 build_script:
-  - cl /?
-  - set
-  - # bash -login -c "which cl 2>/dev/null"
-  - set Path=%VCToolsInstallDir%\bin\Host%PLATFORM%\%PLATFORM%;%Path%
-  - set
-  - cl /?
-  - cd %VSSDK140Install%
-  - tree
+#   - cl /?
+#   - set
+#   - # bash -login -c "which cl 2>/dev/null"
+#   - set Path=%VCToolsInstallDir%\bin\Host%PLATFORM%\%PLATFORM%;%Path%
+#   - set
+#   - cl /?
+#   - cd %VSSDK140Install%
+#   - tree
   
   # VsDevCmd.bat
   # VsDevCmd -arch=amd64
@@ -44,24 +44,24 @@ build_script:
   # and replaces vsvars32.bat that came with Visual Studio 2015 and earlier
   # https://renenyffenegger.ch/notes/Windows/dirs/Program-Files-x86/Microsoft-Visual-Studio/version/edition/Common7/Tools/VsDevCmd_bat
     
-  - # bash -login -c "find /c -name '*cl.exe'       -print 2>/dev/null"
-  - # bash -login -c "find /c -name '*vcvars64.bat' -print 2>/dev/null"
-  - dir "C:\Program Files (x86)"
-  - dir "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin"
-  - '"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\cl" /?'
-  - # cd "C:\Program Files (x86)"
-  - # tree
-  - dir "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC"
-  - bash -login -c "find '/c/Program Files (x86)/Microsoft Visual Studio 14.0' -name 'cl.exe' -type f"
-  - bash -login -c "find '/c/Program Files (x86)/Microsoft Visual Studio 14.0' -name 'VsDevCmd.bat' -type f"
-  - '"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\cl.exe" /?'
-  - '"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\amd\cl.exe" /?'
-  - '"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\amd64_x86\cl.exe" /?'
-  - '"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\cl.exe" /?'
-  #
-  - '"C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\Tools\VsDevCmd.bat" -arch=x86'
-  - cl /?
-
+#   - # bash -login -c "find /c -name '*cl.exe'       -print 2>/dev/null"
+#   - # bash -login -c "find /c -name '*vcvars64.bat' -print 2>/dev/null"
+#   - dir "C:\Program Files (x86)"
+#   - dir "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin"
+#   - '"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\cl" /?'
+#   - # cd "C:\Program Files (x86)"
+#   - # tree
+#   - dir "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC"
+#   - bash -login -c "find '/c/Program Files (x86)/Microsoft Visual Studio 14.0' -name 'cl.exe' -type f"
+#   - bash -login -c "find '/c/Program Files (x86)/Microsoft Visual Studio 14.0' -name 'VsDevCmd.bat' -type f"
+#   - '"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\cl.exe" /?'
+#   - '"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\amd\cl.exe" /?'
+#   - '"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\amd64_x86\cl.exe" /?'
+#   - '"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\x86_amd64\cl.exe" /?'
+#   #
+#   - '"C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\Tools\VsDevCmd.bat" -arch=x86'
+#   - cl /?
+  - ps: Get-Alias
 
 
 # DIES NOT FOUND - which cl

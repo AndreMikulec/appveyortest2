@@ -20,6 +20,39 @@ install:
 #   - set Path=%Path%;c:\%betterperl%\c\bin
 #   #
 
+
+
+# x64 - sucessful creation
+# C:\Program Files\PostgreSQL\REL_10_0
+#
+# x86 - try . . .
+#
+# Appveyor build server environment variables
+#
+# ProgramFiles=C:\Program Files
+# ProgramFiles(x86)=C:\Program Files (x86)
+#
+#
+# - ps:  New-Item -Path "%pgroot%" -ItemType Directory -Force
+#
+- set pgversion=REL_10_0
+#
+- set PLATFORM=x64
+- if %PLATFORM%==x64 ( set pf=%ProgramFiles%&& set x64=-x64) else set pf=%ProgramFiles(x86)%
+- set pgroot=%pf%\PostgreSQL\%pgversion%
+- echo  "%pgroot%"
+- mkdir "%pgroot%"
+- dir   "%pgroot%
+
+#
+- set PLATFORM=x86
+- if %PLATFORM%==x64 ( set pf=%ProgramFiles%&& set x64=-x64) else set pf=%ProgramFiles(x86)%
+- set pgroot=%pf%\PostgreSQL\%pgversion%
+- echo  "%pgroot%"
+- mkdir "%pgroot%"
+- dir   "%pgroot%
+
+
 build_script:
 #   - cl /?
 #   - set

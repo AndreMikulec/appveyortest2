@@ -8,6 +8,19 @@ environment:
       platform: x86
       APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
 
+
+
+init:
+- ps: |
+    if ("$env:PLATFORM" -eq "x64") {
+      $env:pf = "$env:ProgramFiles"
+      $env:x64 = "-x64"
+    } else {
+      $env:pf = "${env:ProgramFiles(x86)}"
+    }
+    $env:exe = "postgresql-$env:pg-windows$env:x64.exe"
+    [Environment]::SetEnvironmentVariable("exe", $env:exe, "Machine")
+
 install:
 #   #
 #   - if %PLATFORM%==x64 (set BIT=64) else set BIT=32
@@ -19,6 +32,7 @@ install:
 #   - which perl
 #   - set Path=%Path%;c:\%betterperl%\c\bin
 #   #
+
 
 
 
@@ -35,23 +49,23 @@ install:
 #
 # - ps:  New-Item -Path "%pgroot%" -ItemType Directory -Force
 #
-- set pgversion=REL_10_0
+# - set pgversion=REL_10_0
 #
-- set PLATFORM=x64
-- if %PLATFORM%==x64 ( set pf=%ProgramFiles%&& set x64=-x64) else set pf=%ProgramFiles(x86)%
-- set pgroot=%pf%\PostgreSQL\%pgversion%
-- echo  "%pgroot%"
-- mkdir "%pgroot%"
-- dir   "%pgroot%
+# - set PLATFORM=x64
+# - if %PLATFORM%==x64 ( set pf=%ProgramFiles%&& set x64=-x64) else set pf=%ProgramFiles(x86)%
+# - set pgroot=%pf%\PostgreSQL\%pgversion%
+# - echo  "%pgroot%"
+# - mkdir "%pgroot%"
+# - dir   "%pgroot%
 
 #
-- set PLATFORM=x86
-- if %PLATFORM%==x64 ( set pf=%ProgramFiles%&& set x64=-x64) else set pf=%ProgramFiles(x86)%
-- set pgroot=%pf%\PostgreSQL\%pgversion%
-- echo  "%pgroot%"
-- mkdir "%pgroot%"
-- dir   "%pgroot%
-
+# - set PLATFORM=x86
+# - if %PLATFORM%==x64 ( set pf=%ProgramFiles%&& set x64=-x64) else set pf=%ProgramFiles(x86)%
+# - set pgroot=%pf%\PostgreSQL\%pgversion%
+# - echo  "%pgroot%"
+# - mkdir "%pgroot%"
+# - dir   "%pgroot%
+# 
 
 build_script:
 #   - cl /?
@@ -62,6 +76,7 @@ build_script:
 #   - cl /?
 #   - cd %VSSDK140Install%
 #   - tree
+- bash --login -c "find '$(cygpath '${pf}')' -name '*.exe' -type f 2>/dev/null"
   
   # VsDevCmd.bat
   # VsDevCmd -arch=amd64
@@ -94,8 +109,6 @@ build_script:
 #   #
 #   - '"C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\Tools\VsDevCmd.bat" -arch=x86'
 #   - cl /?
-  - ps: Get-Alias
-
 
 # DIES NOT FOUND - which cl
 # - set

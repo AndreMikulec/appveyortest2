@@ -65,7 +65,7 @@ install:
 # - echo  "%pgroot%"
 # - mkdir "%pgroot%"
 # - dir   "%pgroot%
-# 
+#
 
 build_script:
 #   - cl /?
@@ -76,9 +76,9 @@ build_script:
 #   - cl /?
 #   - cd %VSSDK140Install%
 #   - tree
-- bash --login -c "echo $(cygpath '${pf}')"
-- bash --login -c "find '$(cygpath '${pf}')' -name '*.exe' -type f 2>/dev/null"
-  
+# - bash --login -c "echo "$(cygpath "${pf}")" "
+- bash --login -c "find "$(cygpath "${pf}")" -name '*.exe' -type f 2>/dev/null"
+
   # VsDevCmd.bat
   # VsDevCmd -arch=amd64
   # VsDevCmd -arch=x86 (default)
@@ -89,10 +89,10 @@ build_script:
   # which cl
   # no help (in yaml enclosed in outside single quotes)
   # "C:\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\Tools\VsDevCmd.bat" -arch=x86
-  # VsDevCmd.bat is new with Visual Studio 2017 
+  # VsDevCmd.bat is new with Visual Studio 2017
   # and replaces vsvars32.bat that came with Visual Studio 2015 and earlier
   # https://renenyffenegger.ch/notes/Windows/dirs/Program-Files-x86/Microsoft-Visual-Studio/version/edition/Common7/Tools/VsDevCmd_bat
-    
+
 #   - # bash -login -c "find /c -name '*cl.exe'       -print 2>/dev/null"
 #   - # bash -login -c "find /c -name '*vcvars64.bat' -print 2>/dev/null"
 #   - dir "C:\Program Files (x86)"

@@ -76,6 +76,7 @@ build_script:
 #   - cl /?
 #   - cd %VSSDK140Install%
 #   - tree
+- bash --login -c "echo $(cygpath '${pf}')"
 - bash --login -c "find '$(cygpath '${pf}')' -name '*.exe' -type f 2>/dev/null"
   
   # VsDevCmd.bat

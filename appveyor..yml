@@ -9,8 +9,13 @@ environment:
   ENVVARIABLE: forroot
 
   matrix:
+  - MATVARIABLE: root
   - MATVARIABLE: matvar1
   - MATVARIABLE: matvar2
+    
+matrix:
+  only:
+    - MATVARIABLE: root
     
     
 init:

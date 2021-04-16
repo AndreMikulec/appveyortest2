@@ -18,11 +18,7 @@ install:
 before_build:
   - echo root before_build %MATVARIABLE%
 
-build_script:
-  - echo root build_script %MATVARIABLE%
 
-test_script:
-  - echo root test_script %MATVARIABLE%
 
 for:
 

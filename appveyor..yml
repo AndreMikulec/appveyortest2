@@ -72,25 +72,8 @@ for:
     - echo matvar2 build_script
 
 
+artifact:
+ - 
+
 cache:
-- item.txt
-
-
-artifacts:
-- path: 'plr-*.zip'
-  name: plr_zip
-- path: 'pg-*.zip'
-  name: pg_zip
-
-deploy:
-
-  - provider: FTP
-    host: frs.sourceforge.net
-    protocol: sftp
-    username: andremikulec,andremikulec.u
-    password:
-      secure: 4gk4GyW4O5RooiOyGeRdoA==
-    artifact: pg_zip, plr_zip
-    folder: /home/frs/project/andremikulec
-    application:
-    active_mode: false
+- cashe.txt

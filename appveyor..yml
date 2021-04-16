@@ -11,24 +11,19 @@ environment:
   matrix:
   - MATVARIABLE: matvar1
   - MATVARIABLE: matvar2
-    
-    
-init:
-  - echo %ENVVARIABLE%
-  - echo root init %MATVARIABLE%
-    
+
 install:
   - echo root install %MATVARIABLE%
-   
+
 before_build:
   - echo root before_build %MATVARIABLE%
-  
+
 build_script:
   - echo root build_script %MATVARIABLE%
-    
+
 test_script:
   - echo root test_script %MATVARIABLE%
-    
+
 for:
 
 -
@@ -38,8 +33,11 @@ for:
 
   environment:
     ENVVARIABLE: for1
-    
-    
+
+  init:
+    - echo %ENVVARIABLE%
+    - echo matvar1 init %MATVARIABLE%
+
   build_script:
     - echo matvar1 build_script %MATVARIABLE%
 
@@ -53,7 +51,10 @@ for:
 
   environment:
     ENVVARIABLE: for2
-    
+
+  init:
+    - echo %ENVVARIABLE%
+    - echo matvar2 init %MATVARIABLE%
 
   build_script:
     - echo matvar2 build_script %MATVARIABLE%
